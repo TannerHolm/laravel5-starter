@@ -21,10 +21,4 @@ class AppController extends Controller
   		return view('index');
   	}
   }
-  
-  public function getHome()
-  {
-  	
-  }
-  
 }
