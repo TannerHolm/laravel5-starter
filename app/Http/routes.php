@@ -13,10 +13,6 @@
 
 Route::get('/', 'AppController@getIndex');
 
-Route::group(['middleware' => 'auth'], function () {
-  Route::get('/home', 'AppController@getHome');
-});
-
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');
