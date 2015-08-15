@@ -18,44 +18,41 @@ elixir(function(mix) {
   /* Compile the app.scss file to public/css/app.css */
   .sass('app.scss', 'public/src/css/app.css')
   
-  /* Copy the Foundation JS folder from bower_components to a js/foundation folder */
-  .copy('bower_components/foundation/js', 'resources/assets/js/foundation')
-  
   /* Copy the Modernizr.js library into it's own file at public/js/modernizr.js */
-  .scripts('foundation/vendor/modernizr.js', 'public/src/js/modernizr.js', 'resources/assets/js')
+  .scripts('bower_components/foundation/js/vendor/modernizr.js', 'public/src/js/modernizr.js', './')
   
   /* Compile/Merge all of the js files to public/js/app.js */
 	.scripts([
 		/* Grab Fastclick.js and jQuery.js first */
-		'foundation/vendor/fastclick.js',
-		'foundation/vendor/jquery.js',
+		'bower_components/foundation/js/vendor/fastclick.js',
+		'bower_components/foundation/js/vendor/jquery.js',
 		
 		/* Use the entire Foundation JS library */
-		'foundation/foundation.js',
+		'bower_components/foundation/js/foundation.js',
 		
 		/* Or use Foundation JS components individually */
-		//'foundation/foundation/foundation.js',	
-		//'foundation/foundation/foundation.abide.js',
-		//'foundation/foundation/foundation.accordion.js',
-		//'foundation/foundation/foundation.alert.js',
-		//'foundation/foundation/foundation.clearing.js',
-		//'foundation/foundation/foundation.dropdown.js',
-		//'foundation/foundation/foundation.equalizer.js',
-		//'foundation/foundation/foundation.interchange.js',
-		//'foundation/foundation/foundation.joyride.js',
-		//'foundation/foundation/foundation.magellan.js',
-		//'foundation/foundation/foundation.offcanvas.js',
-		//'foundation/foundation/foundation.orbit.js',
-		//'foundation/foundation/foundation.reveal.js',
-		//'foundation/foundation/foundation.slider.js',
-		//'foundation/foundation/foundation.tab.js',
-		//'foundation/foundation/foundation.tooltip.js',
-		//'foundation/foundation/foundation.topbar.js',
+		//'bower_components/foundation/js/foundation/foundation.js',	
+		//'bower_components/foundation/js/foundation/foundation.abide.js',
+		//'bower_components/foundation/js/foundation/foundation.accordion.js',
+		//'bower_components/foundation/js/foundation/foundation.alert.js',
+		//'bower_components/foundation/js/foundation/foundation.clearing.js',
+		//'bower_components/foundation/js/foundation/foundation.dropdown.js',
+		//'bower_components/foundation/js/foundation/foundation.equalizer.js',
+		//'bower_components/foundation/js/foundation/foundation.interchange.js',
+		//'bower_components/foundation/js/foundation/foundation.joyride.js',
+		//'bower_components/foundation/js/foundation/foundation.magellan.js',
+		//'bower_components/foundation/js/foundation/foundation.offcanvas.js',
+		//'bower_components/foundation/js/foundation/foundation.orbit.js',
+		//'bower_components/foundation/js/foundation/foundation.reveal.js',
+		//'bower_components/foundation/js/foundation/foundation.slider.js',
+		//'bower_components/foundation/js/foundation/foundation.tab.js',
+		//'bower_components/foundation/js/foundation/foundation.tooltip.js',
+		//'bower_components/foundation/js/foundation/foundation.topbar.js',
 		
 		/* Finally, include your custom javascript file */
-		'app.js'
+		'resources/assets/js/app.js'
 		
-	], 'public/src//js/app.js', 'resources/assets/js')
+	], 'public/src/js/app.js', './')
 	
 	/* Setup versioning for the app.css, app.js and modernizr.js files */
 	.version(["src/css/app.css", "src/js/app.js", 'src/js/modernizr.js']);
